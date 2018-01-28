@@ -21,7 +21,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.matt.coolweather.gson.Forecast;
 import com.example.matt.coolweather.gson.Weather;
-//import com.example.matt.coolweather.service.AutoUpdateService;
+import com.example.matt.coolweather.service.AutoUpdateService;
 import com.example.matt.coolweather.util.HttpUtil;
 import com.example.matt.coolweather.util.Utility;
 
@@ -30,6 +30,7 @@ import java.io.IOException;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
+import android.content.Intent;
 
 public class WeatherActivity extends AppCompatActivity {
 
@@ -230,7 +231,7 @@ public class WeatherActivity extends AppCompatActivity {
         carWashText.setText(carWash);
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
-        //Intent intent = new Intent(this, AutoUpdateService.class);
-        //startService(intent);
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
 }
