@@ -39,7 +39,7 @@ public class WeatherActivity extends AppCompatActivity {
 
     private ScrollView weatherLayout;
 
-    //private Button navButton;
+    private Button navButton;
 
     private TextView titleCity;
 
@@ -91,7 +91,7 @@ public class WeatherActivity extends AppCompatActivity {
         swipeRefresh = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
         swipeRefresh.setColorSchemeResources(R.color.colorPrimary);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        //navButton = (Button) findViewById(R.id.nav_button);
+        navButton = (Button) findViewById(R.id.nav_button);
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         String weatherString = prefs.getString("weather", null);
         if (weatherString != null) {
@@ -111,12 +111,12 @@ public class WeatherActivity extends AppCompatActivity {
                 requestWeather(mWeatherId);
             }
         });
-        /*navButton.setOnClickListener(new View.OnClickListener() {
+        navButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 drawerLayout.openDrawer(GravityCompat.START);
             }
-        });*/
+        });/**/
         String bingPic = prefs.getString("bing_pic", null);
         if (bingPic != null) {
             Glide.with(this).load(bingPic).into(bingPicImg);
